@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GalleryActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bg" />
+
+    <LinearLayout
+        android:id="@+id/conLay"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/theme_border"
+        android:paddingLeft="20sp"
+        android:paddingTop="5sp"
+        android:paddingRight="20sp"
+        android:paddingBottom="5sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/userPane"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="placeholder Account:"
+            android:textColor="#F2F1F1F1"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/spacer"
+            android:layout_width="69dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:textColor="#F2F1F1F1"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/friendsTextView"
+            android:layout_width="86dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10sp"
+            android:layout_weight="0.5"
+            android:background="#D8FAFAFA"
+            android:foregroundGravity="center_vertical|center"
+            android:gravity="center|center_vertical"
+            android:maxWidth="20sp"
+            android:onClick="friendsList"
+            android:paddingTop="0sp"
+            android:paddingBottom="0sp"
+            android:text="Friends"
+            android:textColor="#F23D3D3D"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/signOutTextView"
+            android:layout_width="86dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10sp"
+            android:layout_weight="0.5"
+            android:background="#D8FAFAFA"
+            android:foregroundGravity="center_vertical|center"
+            android:gravity="center|center_vertical"
+            android:maxWidth="20sp"
+            android:onClick="signOut"
+            android:paddingTop="0sp"
+            android:paddingBottom="0sp"
+            android:text="Sign Out"
+            android:textColor="#F23D3D3D"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/greeting"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#5E2B2B2B"
+        android:gravity="center_horizontal|center_vertical"
+        android:padding="3sp"
+        android:text="Gallery:"
+        android:textColor="#E9FFFFFF"
+        android:textColorHighlight="#00FFFFFF"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/conLay" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contentConLay"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/list_theme"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/greeting">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableLayout
+                android:id="@+id/tabitha"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:stretchColumns="*"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <ImageView
+                        android:id="@+id/mainView"
+                        android:layout_width="200sp"
+                        android:layout_height="200sp"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/common_google_signin_btn_icon_dark" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="3sp">
+
+                    <Button
+                        android:id="@+id/button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="goBackToUserFeed"
+                        android:text="GO BACK TO USER FEED"
+                        tools:layout_editor_absoluteX="105dp"
+                        tools:layout_editor_absoluteY="526dp" />
+                </TableRow>
+            </TableLayout>
+
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
